@@ -34,7 +34,7 @@ cp LICENSE $TEMP_DIR/
 ls -al $TEMP_DIR
 
 if [[ $TARGET_PLATFORM != win-* ]]; then
-  CONDA_SUBDIR=$TARGET_PLATFORM conda create -n micromamba micromamba=0.8.2 -c conda-forge --yes
+  CONDA_SUBDIR=$TARGET_PLATFORM conda create -n micromamba micromamba=0.9.2 -c conda-forge --yes
   MICROMAMBA_FILE=$(find $CONDA_PREFIX/pkgs -iname micromamba)
   EXTRA_CONSTRUCTOR_ARGS="$EXTRA_CONSTRUCTOR_ARGS --conda-exe $MICROMAMBA_FILE --platform $TARGET_PLATFORM"
 fi
