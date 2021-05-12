@@ -16,7 +16,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
 elif [[ "$(uname)" == MINGW* ]]; then
     conda install -y "nsis=3.01" -c conda-forge --override-channels
 fi
-pip install git+git://github.com/conda/constructor@1fb0463ce01734e95b35c12d8c7ecbc4b29cca85#egg=constructor --force --no-deps
+pip install git+git://github.com/wolfv/constructor@69eaa20b12ea1020438f645ec834f47ac9d3c3a7#egg=constructor --force --no-deps
 conda list
 
 echo "***** Make temp directory *****"
@@ -32,7 +32,7 @@ cp LICENSE $TEMP_DIR/
 
 ls -al $TEMP_DIR
 
-MICROMAMBA_VERSION=0.12.0
+MICROMAMBA_VERSION=0.13.0
 mkdir $TEMP_DIR/micromamba
 pushd $TEMP_DIR/micromamba
 curl -L -O https://anaconda.org/conda-forge/micromamba/$MICROMAMBA_VERSION/download/$TARGET_PLATFORM/micromamba-$MICROMAMBA_VERSION-0.tar.bz2
