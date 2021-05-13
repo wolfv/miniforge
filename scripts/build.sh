@@ -10,7 +10,12 @@ cd $CONSTRUCT_ROOT
 # Constructor should be latest for non-native building
 # See https://github.com/conda/constructor
 echo "***** Install constructor *****"
-conda install -y 'constructor>=3.1.0' jinja2 -c conda-forge -c defaults --override-channels
+if [[ "$(TARGET_PLATFORM)" == "linux-ppc64le" ]]
+   conda install -y 'constructor>=3.1.0' jinja2 -c conda-forge -c defaults --override-channels
+else
+   conda install -y "constructor>=3.1.0" jinja2 curl libarchive -c conda-forge --override-channels
+fi
+
 if [[ "$(uname)" == "Darwin" ]]; then
     conda install -y coreutils -c conda-forge --override-channels
 elif [[ "$(uname)" == MINGW* ]]; then
