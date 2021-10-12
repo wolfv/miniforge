@@ -48,7 +48,7 @@ if [[ "$TARGET_PLATFORM" != win-* ]]; then
     if [[ "$TARGET_PLATFORM" == win-* ]]; then
       MICROMAMBA_FILE=$PWD/Library/bin/micromamba.exe
     else
-      MICROMAMBA_FILE=$PWD/bin/micromamba-nightly-linux-64
+      MICROMAMBA_FILE=$PWD/micromamba-nightly-linux-64
     fi
     popd
     EXTRA_CONSTRUCTOR_ARGS="$EXTRA_CONSTRUCTOR_ARGS --conda-exe $MICROMAMBA_FILE --platform $TARGET_PLATFORM"
